@@ -1,6 +1,6 @@
 # Author: Abby McCollam
 
-# TO DO
+# TO DO ABBY
 # 17 >= inputs
 # allow user to delete variables
 # do you need both board and myboard
