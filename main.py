@@ -130,6 +130,10 @@ def mouse_click(board, answer):
 
                     waiting_for_input = False
                 
+                elif event.key == pygame.K_DELETE:
+                    board[b][a] = 0 # clear board
+                    print("Hi and hello")
+                
     return answer
 
 def check_filled(board):
@@ -140,7 +144,7 @@ def check_filled(board):
 
     # only returns True if the board has no 0s
     return True
-                    
+                  
 def main():
     running = True
     answer = True
