@@ -85,7 +85,7 @@ def erase_portion(board):
 
     pygame.display.flip()
 
-# enable user to click on the screen
+# enable user to click on the screen y
 def mouse_click(board, answer):
     
     font = pygame.font.SysFont('Arial', 40)  # font of numbers
