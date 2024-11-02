@@ -107,8 +107,7 @@ def mouse_click(board, answer):
 
             # if a key is pressed
             elif event.type == pygame.KEYDOWN:
-            
-                key = pygame.key.get_pressed()
+
 
                 # if input is a digit and the current spot is a 0
                 if event.unicode.isdigit() and board[b][a] == 0:
@@ -126,8 +125,7 @@ def mouse_click(board, answer):
 
                     waiting_for_input = False
                 
-                if key[pygame.K_DELETE]:
-                #elif event.key == pygame.K_DELETE:
+                elif event.key == pygame.K_DELETE:
                     board[b][a] = 0 # clear board
                     print("Hi and hello")
                 
