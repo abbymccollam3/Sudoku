@@ -108,17 +108,13 @@ def mouse_click(board, answer):
             # if a key is pressed
             elif event.type == pygame.KEYDOWN:
             
+                key = pygame.key.get_pressed()
+
                 # if input is a digit and the current spot is a 0
                 if event.unicode.isdigit() and board[b][a] == 0:
 
                     # set board space equal to input
                     board[b][a] = int(event.unicode)
-
-                    # clear and refresh screen
-                    screen.fill(WHITE) 
-                    draw_grid()  
-                    draw_numbers(board) 
-                    pygame.display.flip() 
 
                     keytype = pygame.key.name(event.key)
                     print(f"Keytype: {keytype}")
@@ -130,10 +126,17 @@ def mouse_click(board, answer):
 
                     waiting_for_input = False
                 
-                elif event.key == pygame.K_DELETE:
+                if key[pygame.K_DELETE]:
+                #elif event.key == pygame.K_DELETE:
                     board[b][a] = 0 # clear board
                     print("Hi and hello")
                 
+                # clear and refresh screen
+                screen.fill(WHITE) 
+                draw_grid()  
+                draw_numbers(board) 
+                pygame.display.flip() 
+
     return answer
 
 def check_filled(board):
