@@ -1,9 +1,5 @@
 # Author: Abby McCollam
 
-# TO DO
-# allow user to delete variables
-# do you need both board and myboard
-
 import pygame
 import sys
 import math
@@ -139,6 +135,8 @@ def mouse_click(board, answer):
                     draw_grid()
                     draw_numbers(board)
                     pygame.display.flip()
+
+                    waiting_for_input = False
                 
     return answer
 
