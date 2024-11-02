@@ -1,7 +1,6 @@
 # Author: Abby McCollam
 
 # TO DO
-# 17 >= inputs
 # allow user to delete variables
 # do you need both board and myboard
 
@@ -73,11 +72,16 @@ def draw_numbers(board):
 
 # function to rnadomize blank spots in grid
 def erase_portion(board):
+    total_cells = 81
+    filled_cells = total_cells
+    # at least 17 squares have to be filled
     for i in range(9):
         for j in range (9):
-            choice = random.randint(0, 1)
-            if choice == 1:
-                board[i][j] = 0
+            if filled_cells > 17:
+                choice = random.randint(0, 1)
+                if choice == 1:
+                    board[i][j] = 0
+                    filled_cells -= 1
 
     pygame.display.flip()
 
