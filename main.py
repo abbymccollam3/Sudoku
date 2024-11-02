@@ -130,9 +130,15 @@ def mouse_click(board, answer):
 
                     waiting_for_input = False
                 
-                elif event.key == pygame.K_BACKSPACE and board[b][a] == 0:
-                    board[b][a] == 0
+                elif event.key == pygame.K_BACKSPACE:
+                    board[b][a] = 0
                     print("Hi and hello")
+
+                    # Refresh the screen after deletion
+                    screen.fill(WHITE)
+                    draw_grid()
+                    draw_numbers(board)
+                    pygame.display.flip()
                 
     return answer
 
